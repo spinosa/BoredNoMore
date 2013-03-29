@@ -12,6 +12,9 @@
 @interface DSViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *headLabel;
 
+@property (strong, nonatomic) DSBoredGestureRecognizer *impatientGesture;
+@property (strong, nonatomic) DSBoredGestureRecognizer *boredGesture;
+
 @end
 
 @implementation DSViewController
@@ -27,23 +30,27 @@
     [self.view addGestureRecognizer:tapGesture];
     
     // IMPATIENT
-    DSBoredGestureRecognizer *impatientGesture = [[DSBoredGestureRecognizer alloc] initWithTarget:self
-                                                                                           action:@selector(impatientRecognized)];
-    impatientGesture.numberOfSequencesRequired = 3;
-    impatientGesture.graceBetweenSequences = 0.4;
-    [self.view addGestureRecognizer:impatientGesture];
+    self.impatientGesture = [[DSBoredGestureRecognizer alloc] initWithTarget:self
+                                                                      action:@selector(impatientRecognized)];
+    self.impatientGesture.numberOfSequencesRequired = 3;
+    self.impatientGesture.graceBetweenSequences = 0.4;
+    [self.view addGestureRecognizer:self.impatientGesture];
     
     // BORED
-    DSBoredGestureRecognizer *boredGesture = [[DSBoredGestureRecognizer alloc] initWithTarget:self
-                                                                                       action:@selector(boredRecognized)];
-    boredGesture.numberOfSequencesRequired = 1;
-    [boredGesture requireGestureRecognizerToFail:impatientGesture];
-    [self.view addGestureRecognizer:boredGesture];
+    self.boredGesture = [[DSBoredGestureRecognizer alloc] initWithTarget:self
+                                                                  action:@selector(boredRecognized)];
+    self.boredGesture.numberOfSequencesRequired = 1;
+    [self.boredGesture requireGestureRecognizerToFail:self.impatientGesture];
+    [self.view addGestureRecognizer:self.boredGesture];
 }
 
 -(void) boredRecognized
 {
-    self.headLabel.text = @"You seem bored...";
+    if(self.boredGesture.direction == DSBoredGestureRecognizerDirectionLeft){
+        self.headLabel.text = @"<--bored you seem---";
+    } else {
+        self.headLabel.text = @"---you seem bored-->";
+    }
 }
 
 -(void) impatientRecognized
