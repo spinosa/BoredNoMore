@@ -146,7 +146,7 @@ CGPoint directionBetweenPoints(CGPoint start, CGPoint end) {
     return CGPointMake(MIN(1, MAX(-1, end.x-start.x)), MIN(1, MAX(-1, end.y-start.y)));
 }
 
-#define MAX_ANGLE_DIFF 50.0f
+#define MAX_ANGLE_DIFF 60.0f
 
 // a valid path proceeds in the same general direction without altering heading too greatly
 // fails if the heading changes too sharply or absolute direction in both X and Y change simultaneously

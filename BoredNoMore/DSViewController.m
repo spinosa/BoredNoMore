@@ -30,7 +30,7 @@
     DSBoredGestureRecognizer *impatientGesture = [[DSBoredGestureRecognizer alloc] initWithTarget:self
                                                                                            action:@selector(impatientRecognized)];
     impatientGesture.numberOfSequencesRequired = 3;
-    impatientGesture.graceBetweenSequences = 0.5;
+    impatientGesture.graceBetweenSequences = 0.4;
     [self.view addGestureRecognizer:impatientGesture];
     
     // BORED
