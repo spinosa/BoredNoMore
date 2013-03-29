@@ -37,6 +37,23 @@
 		911284D2170608E3007352E4 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 911284C7170608E3007352E4 /* AFURLConnectionOperation.m */; };
 		911284D3170608E3007352E4 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 911284C9170608E3007352E4 /* AFXMLRequestOperation.m */; };
 		911284D4170608E3007352E4 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 911284CB170608E3007352E4 /* UIImageView+AFNetworking.m */; };
+		911284E617061FF3007352E4 /* conan0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284D517061FF3007352E4 /* conan0.gif */; };
+		911284E717061FF3007352E4 /* conan1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284D617061FF3007352E4 /* conan1.gif */; };
+		911284E817061FF3007352E4 /* conan2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284D717061FF3007352E4 /* conan2.gif */; };
+		911284E917061FF3007352E4 /* conan3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284D817061FF3007352E4 /* conan3.gif */; };
+		911284EA17061FF3007352E4 /* conan4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284D917061FF3007352E4 /* conan4.gif */; };
+		911284EB17061FF3007352E4 /* conan5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284DA17061FF3007352E4 /* conan5.gif */; };
+		911284EC17061FF3007352E4 /* conan6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284DB17061FF3007352E4 /* conan6.gif */; };
+		911284ED17061FF3007352E4 /* conan7.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284DC17061FF3007352E4 /* conan7.gif */; };
+		911284EE17061FF3007352E4 /* conan8.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284DD17061FF3007352E4 /* conan8.gif */; };
+		911284EF17061FF3007352E4 /* conan9.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284DE17061FF3007352E4 /* conan9.gif */; };
+		911284F017061FF3007352E4 /* conan10.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284DF17061FF3007352E4 /* conan10.gif */; };
+		911284F117061FF3007352E4 /* conan11.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284E017061FF3007352E4 /* conan11.gif */; };
+		911284F217061FF3007352E4 /* conan12.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284E117061FF3007352E4 /* conan12.gif */; };
+		911284F317061FF3007352E4 /* conan13.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284E217061FF3007352E4 /* conan13.gif */; };
+		911284F417061FF3007352E4 /* conan14.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284E317061FF3007352E4 /* conan14.gif */; };
+		911284F517061FF3007352E4 /* conan15.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284E417061FF3007352E4 /* conan15.gif */; };
+		911284F617061FF3007352E4 /* conan16.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284E517061FF3007352E4 /* conan16.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +104,23 @@
 		911284C9170608E3007352E4 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		911284CA170608E3007352E4 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		911284CB170608E3007352E4 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		911284D517061FF3007352E4 /* conan0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan0.gif; sourceTree = "<group>"; };
+		911284D617061FF3007352E4 /* conan1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan1.gif; sourceTree = "<group>"; };
+		911284D717061FF3007352E4 /* conan2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan2.gif; sourceTree = "<group>"; };
+		911284D817061FF3007352E4 /* conan3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan3.gif; sourceTree = "<group>"; };
+		911284D917061FF3007352E4 /* conan4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan4.gif; sourceTree = "<group>"; };
+		911284DA17061FF3007352E4 /* conan5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan5.gif; sourceTree = "<group>"; };
+		911284DB17061FF3007352E4 /* conan6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan6.gif; sourceTree = "<group>"; };
+		911284DC17061FF3007352E4 /* conan7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan7.gif; sourceTree = "<group>"; };
+		911284DD17061FF3007352E4 /* conan8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan8.gif; sourceTree = "<group>"; };
+		911284DE17061FF3007352E4 /* conan9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan9.gif; sourceTree = "<group>"; };
+		911284DF17061FF3007352E4 /* conan10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan10.gif; sourceTree = "<group>"; };
+		911284E017061FF3007352E4 /* conan11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan11.gif; sourceTree = "<group>"; };
+		911284E117061FF3007352E4 /* conan12.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan12.gif; sourceTree = "<group>"; };
+		911284E217061FF3007352E4 /* conan13.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan13.gif; sourceTree = "<group>"; };
+		911284E317061FF3007352E4 /* conan14.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan14.gif; sourceTree = "<group>"; };
+		911284E417061FF3007352E4 /* conan15.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan15.gif; sourceTree = "<group>"; };
+		911284E517061FF3007352E4 /* conan16.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = conan16.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +211,23 @@
 		911284B31705F180007352E4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				911284D517061FF3007352E4 /* conan0.gif */,
+				911284D617061FF3007352E4 /* conan1.gif */,
+				911284D717061FF3007352E4 /* conan2.gif */,
+				911284D817061FF3007352E4 /* conan3.gif */,
+				911284D917061FF3007352E4 /* conan4.gif */,
+				911284DA17061FF3007352E4 /* conan5.gif */,
+				911284DB17061FF3007352E4 /* conan6.gif */,
+				911284DC17061FF3007352E4 /* conan7.gif */,
+				911284DD17061FF3007352E4 /* conan8.gif */,
+				911284DE17061FF3007352E4 /* conan9.gif */,
+				911284DF17061FF3007352E4 /* conan10.gif */,
+				911284E017061FF3007352E4 /* conan11.gif */,
+				911284E117061FF3007352E4 /* conan12.gif */,
+				911284E217061FF3007352E4 /* conan13.gif */,
+				911284E317061FF3007352E4 /* conan14.gif */,
+				911284E417061FF3007352E4 /* conan15.gif */,
+				911284E517061FF3007352E4 /* conan16.gif */,
 				911284A31705EFA8007352E4 /* burns0.gif */,
 				911284A41705EFA8007352E4 /* burns1.gif */,
 				911284A51705EFA8007352E4 /* burns2.gif */,
@@ -289,6 +340,23 @@
 				911284B01705EFA9007352E4 /* burns5.gif in Resources */,
 				911284B11705EFA9007352E4 /* burns6.gif in Resources */,
 				911284B21705EFA9007352E4 /* burns7.gif in Resources */,
+				911284E617061FF3007352E4 /* conan0.gif in Resources */,
+				911284E717061FF3007352E4 /* conan1.gif in Resources */,
+				911284E817061FF3007352E4 /* conan2.gif in Resources */,
+				911284E917061FF3007352E4 /* conan3.gif in Resources */,
+				911284EA17061FF3007352E4 /* conan4.gif in Resources */,
+				911284EB17061FF3007352E4 /* conan5.gif in Resources */,
+				911284EC17061FF3007352E4 /* conan6.gif in Resources */,
+				911284ED17061FF3007352E4 /* conan7.gif in Resources */,
+				911284EE17061FF3007352E4 /* conan8.gif in Resources */,
+				911284EF17061FF3007352E4 /* conan9.gif in Resources */,
+				911284F017061FF3007352E4 /* conan10.gif in Resources */,
+				911284F117061FF3007352E4 /* conan11.gif in Resources */,
+				911284F217061FF3007352E4 /* conan12.gif in Resources */,
+				911284F317061FF3007352E4 /* conan13.gif in Resources */,
+				911284F417061FF3007352E4 /* conan14.gif in Resources */,
+				911284F517061FF3007352E4 /* conan15.gif in Resources */,
+				911284F617061FF3007352E4 /* conan16.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

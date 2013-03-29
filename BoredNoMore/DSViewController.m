@@ -16,7 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (strong, nonatomic) UIImage *burns;
-@property (strong, nonatomic) NSTimer *burnsTimer;
+@property (strong, nonatomic) UIImage *conan;
+@property (strong, nonatomic) NSTimer *conanTimer;
 @property (strong, nonatomic) NSTimer *impatientTimer;
 
 @property (strong, nonatomic) DSBoredGestureRecognizer *impatientGesture;
@@ -34,7 +35,7 @@
     
     _imgFetcher = [[DS4ChanImageFetcher alloc] init];
     
-    _burnsTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(showMrBurns) userInfo:nil repeats:NO];
+    _conanTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(showConan) userInfo:nil repeats:NO];
     
     // Double TAP resets to Burns
     UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -100,8 +101,8 @@
 
 -(void) cancelImageTimers;
 {
-    [_burnsTimer invalidate];
-    _burnsTimer = nil;
+    [_conanTimer invalidate];
+    _conanTimer = nil;
     [_impatientTimer invalidate];
     _impatientTimer = nil;
 }
@@ -120,6 +121,31 @@
                                              duration:1.25];
     }
     [self.imageView setImage:self.burns];
+}
+
+-(void) showConan
+{
+    if(!self.conan){
+        self.conan = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"conan0.gif"],
+                      [UIImage imageNamed:@"conan1.gif"],
+                      [UIImage imageNamed:@"conan2.gif"],
+                      [UIImage imageNamed:@"conan3.gif"],
+                      [UIImage imageNamed:@"conan4.gif"],
+                      [UIImage imageNamed:@"conan5.gif"],
+                      [UIImage imageNamed:@"conan6.gif"],
+                      [UIImage imageNamed:@"conan7.gif"],
+                      [UIImage imageNamed:@"conan8.gif"],
+                      [UIImage imageNamed:@"conan9.gif"],
+                      [UIImage imageNamed:@"conan10.gif"],
+                      [UIImage imageNamed:@"conan11.gif"],
+                      [UIImage imageNamed:@"conan12.gif"],
+                      [UIImage imageNamed:@"conan13.gif"],
+                      [UIImage imageNamed:@"conan14.gif"],
+                      [UIImage imageNamed:@"conan15.gif"],
+                      [UIImage imageNamed:@"conan16.gif"]]
+                                             duration:2];
+    }
+    [self.imageView setImage:self.conan];
 }
 
 @end
