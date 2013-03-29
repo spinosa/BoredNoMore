@@ -13,8 +13,11 @@
 @interface DSViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *headLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (strong, nonatomic) UIImage *burns;
+@property (strong, nonatomic) NSTimer *burnsTimer;
+@property (strong, nonatomic) NSTimer *impatientTimer;
 
 @property (strong, nonatomic) DSBoredGestureRecognizer *impatientGesture;
 @property (strong, nonatomic) DSBoredGestureRecognizer *boredGesture;
@@ -31,13 +34,20 @@
     
     _imgFetcher = [[DS4ChanImageFetcher alloc] init];
     
-    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(showMrBurns) userInfo:nil repeats:NO];
+    _burnsTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(showMrBurns) userInfo:nil repeats:NO];
     
-    // TAP
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                 action:@selector(tapRecognized)];
-    tapGesture.numberOfTapsRequired = 2;
-    [self.view addGestureRecognizer:tapGesture];
+    // Double TAP resets to Burns
+    UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                       action:@selector(tapRecognized)];
+    doubleTapGesture.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:doubleTapGesture];
+    
+    // Single TAP kills timers
+    UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                       action:@selector(cancelImageTimers)];
+    singleTapGesture.numberOfTapsRequired = 1;
+    [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
+    [self.view addGestureRecognizer:singleTapGesture];
     
     // IMPATIENT
     self.impatientGesture = [[DSBoredGestureRecognizer alloc] initWithTarget:self
@@ -61,17 +71,39 @@
     } else {
         self.headLabel.text = @"---you seem bored-->";
     }
+    
+    [self cancelImageTimers];
+    [self nextImage];
 }
 
 -(void) impatientRecognized
 {
-    self.headLabel.text = @"Ok... relax... INTERNET, GO!";
+    self.headLabel.text = @"INTERNET, GO!";
+    
+    [self cancelImageTimers];
+    if(!_impatientTimer){
+        _impatientTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(nextImage) userInfo:nil repeats:YES];
+    }
 }
 
 -(void) tapRecognized
 {
-    self.headLabel.text = @"do something";
+    [self cancelImageTimers];
+    self.headLabel.text = nil;
     [self showMrBurns];
+}
+
+-(void) nextImage
+{
+    [self.imgFetcher updateImageViewWithNextImage:self.imageView andActivityIndicator:self.activityIndicator];
+}
+
+-(void) cancelImageTimers;
+{
+    [_burnsTimer invalidate];
+    _burnsTimer = nil;
+    [_impatientTimer invalidate];
+    _impatientTimer = nil;
 }
 
 -(void) showMrBurns

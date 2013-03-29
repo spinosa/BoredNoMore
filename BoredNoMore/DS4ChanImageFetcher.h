@@ -10,4 +10,6 @@
 
 @interface DS4ChanImageFetcher : NSObject
 
+-(void) updateImageViewWithNextImage:(UIImageView *)imageView andActivityIndicator:(UIActivityIndicatorView *)activityView;
+
 @end

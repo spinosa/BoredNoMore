@@ -15,23 +15,24 @@
 
 @implementation DS4ChanImageFetcher
 
-#define API_URL_ARRAY @[@"http://api.4chan.org/asp/0.json", @"http://api.4chan.org/vr/0.json"]
-#define BOARD_ARRAY @[@"asp", @"vr"]
-
 -(id) init
 {
     self = [super init];
     if(self){
         _urls = [[NSMutableArray alloc] init];
-        [self populateImageUrls];
+        [self populateImageUrls:@"asp"];
+        [self populateImageUrls:@"vr"]; //vr == retro games
+        [self populateImageUrls:@"vr"];
+        [self populateImageUrls:@"vr"];
+        [self populateImageUrls:@"gd"];
+        [self populateImageUrls:@"sci"];
     }
     return self;
 }
 
--(void) populateImageUrls
+-(void) populateImageUrls:(NSString *)board
 {
-    NSString *board = BOARD_ARRAY[0];
-    NSString *urlString = [NSString stringWithFormat:@"http://api.4chan.org/%@/0.json", board];
+    NSString *urlString = [NSString stringWithFormat:@"http://api.4chan.org/%@/%d.json", board, arc4random()%10];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -51,7 +52,6 @@
         for(NSDictionary *dict in postsWithImages){
             NSString *imgUrl = [NSString stringWithFormat:@"http://images.4chan.org/%@/src/%@%@", board, dict[@"tim"], dict[@"ext"]];
             [_urls addObject:imgUrl];
-            DLog(@"Storing image URL:  %@", imgUrl);
         }
         
     } failure:nil];
@@ -59,27 +59,20 @@
     [operation start];
 }
 
-/*
- 
- pull this:
- http://api.4chan.org/pol/0.json
-
- look for response in this format:
- 
- threads: [
-    posts: [
-        {tim: "XYZ", ext: ".jpg", ...},
-        {tim: "ABC", ext: ".png", ...}
- 
-    ]
- ]
- 
- Pull image XYZ like
- 
- http://images.4chan.org/pol/src/1364569484220.jpg
- 
- 
- */
-
+-(void) updateImageViewWithNextImage:(UIImageView *)imageView andActivityIndicator:(UIActivityIndicatorView *)activityView
+{
+    NSUInteger objectIndex = arc4random() % [self.urls count];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[self.urls objectAtIndex:objectIndex]]];
+    [self.urls removeObjectAtIndex:objectIndex];
+    AFImageRequestOperation *op = [AFImageRequestOperation imageRequestOperationWithRequest:request success:^(UIImage *image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [activityView stopAnimating];
+            [imageView setImage:image];
+        });
+    }];
+    
+    [activityView startAnimating];
+    [op start];
+}
 
 @end

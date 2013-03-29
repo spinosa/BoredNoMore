@@ -25,6 +25,7 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" priority="982" constant="830" type="user" id="INb-Yy-Wjb"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="aF8-My-Kgb"/>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -33,11 +34,14 @@
                             <constraint firstItem="Zxo-wr-r5v" firstAttribute="top" secondItem="pCY-t3-m1B" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="V96-Mt-wCI"/>
                             <constraint firstAttribute="trailing" secondItem="pCY-t3-m1B" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="VuO-6f-B96"/>
                             <constraint firstItem="pCY-t3-m1B" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="user" id="YcS-9z-GNG"/>
+                            <constraint firstItem="aF8-My-Kgb" firstAttribute="centerY" secondItem="pCY-t3-m1B" secondAttribute="centerY" type="default" id="a7Z-oA-fXi"/>
                             <constraint firstAttribute="trailing" secondItem="Zxo-wr-r5v" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="e7b-dy-4qS"/>
+                            <constraint firstAttribute="trailing" secondItem="aF8-My-Kgb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="j7r-KY-H9Y"/>
                             <constraint firstItem="Zxo-wr-r5v" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rQq-mU-ftF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="aF8-My-Kgb" id="Xqd-cD-lKE"/>
                         <outlet property="headLabel" destination="pCY-t3-m1B" id="8Cz-Vb-hM2"/>
                         <outlet property="imageView" destination="Zxo-wr-r5v" id="KIw-NR-dBk"/>
                     </connections>
@@ -50,6 +54,7 @@
         <class className="DSViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DSViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="headLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
             </relationships>
