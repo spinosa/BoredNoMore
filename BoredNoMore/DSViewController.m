@@ -8,13 +8,18 @@
 
 #import "DSViewController.h"
 #import "DSBoredGestureRecognizer.h"
+#import "DS4ChanImageFetcher.h"
 
 @interface DSViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *headLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (strong, nonatomic) UIImage *burns;
+
 @property (strong, nonatomic) DSBoredGestureRecognizer *impatientGesture;
 @property (strong, nonatomic) DSBoredGestureRecognizer *boredGesture;
+
+@property (strong, nonatomic) DS4ChanImageFetcher *imgFetcher;
 
 @end
 
@@ -23,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _imgFetcher = [[DS4ChanImageFetcher alloc] init];
     
     [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(showMrBurns) userInfo:nil repeats:NO];
     
@@ -64,11 +71,13 @@
 -(void) tapRecognized
 {
     self.headLabel.text = @"do something";
+    [self showMrBurns];
 }
 
 -(void) showMrBurns
 {
-    UIImage *burns = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"burns0.gif"],
+    if(!self.burns){
+        self.burns = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"burns0.gif"],
                       [UIImage imageNamed:@"burns1.gif"],
                       [UIImage imageNamed:@"burns2.gif"],
                       [UIImage imageNamed:@"burns3.gif"],
@@ -77,7 +86,8 @@
                       [UIImage imageNamed:@"burns6.gif"],
                       [UIImage imageNamed:@"burns7.gif"]]
                                              duration:1.25];
-    [self.imageView setImage:burns];
+    }
+    [self.imageView setImage:self.burns];
 }
 
 @end
