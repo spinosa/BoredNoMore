@@ -11,6 +11,7 @@
 
 @interface DSViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *headLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (strong, nonatomic) DSBoredGestureRecognizer *impatientGesture;
 @property (strong, nonatomic) DSBoredGestureRecognizer *boredGesture;
@@ -22,6 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(showMrBurns) userInfo:nil repeats:NO];
     
     // TAP
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -61,6 +64,20 @@
 -(void) tapRecognized
 {
     self.headLabel.text = @"do something";
+}
+
+-(void) showMrBurns
+{
+    UIImage *burns = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"burns0.gif"],
+                      [UIImage imageNamed:@"burns1.gif"],
+                      [UIImage imageNamed:@"burns2.gif"],
+                      [UIImage imageNamed:@"burns3.gif"],
+                      [UIImage imageNamed:@"burns4.gif"],
+                      [UIImage imageNamed:@"burns5.gif"],
+                      [UIImage imageNamed:@"burns6.gif"],
+                      [UIImage imageNamed:@"burns7.gif"]]
+                                             duration:1.25];
+    [self.imageView setImage:burns];
 }
 
 @end

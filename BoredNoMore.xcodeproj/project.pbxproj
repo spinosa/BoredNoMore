@@ -19,6 +19,14 @@
 		911284751705CCB4007352E4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911284731705CCB4007352E4 /* MainStoryboard.storyboard */; };
 		911284781705CCB4007352E4 /* DSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911284771705CCB4007352E4 /* DSViewController.m */; };
 		911284811705CD24007352E4 /* DSBoredGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 911284801705CD24007352E4 /* DSBoredGestureRecognizer.m */; };
+		911284AB1705EFA9007352E4 /* burns0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284A31705EFA8007352E4 /* burns0.gif */; };
+		911284AC1705EFA9007352E4 /* burns1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284A41705EFA8007352E4 /* burns1.gif */; };
+		911284AD1705EFA9007352E4 /* burns2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284A51705EFA8007352E4 /* burns2.gif */; };
+		911284AE1705EFA9007352E4 /* burns3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284A61705EFA8007352E4 /* burns3.gif */; };
+		911284AF1705EFA9007352E4 /* burns4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284A71705EFA8007352E4 /* burns4.gif */; };
+		911284B01705EFA9007352E4 /* burns5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284A81705EFA8007352E4 /* burns5.gif */; };
+		911284B11705EFA9007352E4 /* burns6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284A91705EFA8007352E4 /* burns6.gif */; };
+		911284B21705EFA9007352E4 /* burns7.gif in Resources */ = {isa = PBXBuildFile; fileRef = 911284AA1705EFA9007352E4 /* burns7.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +48,14 @@
 		911284771705CCB4007352E4 /* DSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSViewController.m; sourceTree = "<group>"; };
 		9112847F1705CD24007352E4 /* DSBoredGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSBoredGestureRecognizer.h; sourceTree = "<group>"; };
 		911284801705CD24007352E4 /* DSBoredGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSBoredGestureRecognizer.m; sourceTree = "<group>"; };
+		911284A31705EFA8007352E4 /* burns0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = burns0.gif; sourceTree = "<group>"; };
+		911284A41705EFA8007352E4 /* burns1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = burns1.gif; sourceTree = "<group>"; };
+		911284A51705EFA8007352E4 /* burns2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = burns2.gif; sourceTree = "<group>"; };
+		911284A61705EFA8007352E4 /* burns3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = burns3.gif; sourceTree = "<group>"; };
+		911284A71705EFA8007352E4 /* burns4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = burns4.gif; sourceTree = "<group>"; };
+		911284A81705EFA8007352E4 /* burns5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = burns5.gif; sourceTree = "<group>"; };
+		911284A91705EFA8007352E4 /* burns6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = burns6.gif; sourceTree = "<group>"; };
+		911284AA1705EFA9007352E4 /* burns7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = burns7.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +105,7 @@
 		911284611705CCB3007352E4 /* BoredNoMore */ = {
 			isa = PBXGroup;
 			children = (
+				911284B31705F180007352E4 /* images */,
 				9112847E1705CCFD007352E4 /* Gestures */,
 				9112846A1705CCB3007352E4 /* DSAppDelegate.h */,
 				9112846B1705CCB3007352E4 /* DSAppDelegate.m */,
@@ -121,6 +138,21 @@
 				911284801705CD24007352E4 /* DSBoredGestureRecognizer.m */,
 			);
 			name = Gestures;
+			sourceTree = "<group>";
+		};
+		911284B31705F180007352E4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				911284A31705EFA8007352E4 /* burns0.gif */,
+				911284A41705EFA8007352E4 /* burns1.gif */,
+				911284A51705EFA8007352E4 /* burns2.gif */,
+				911284A61705EFA8007352E4 /* burns3.gif */,
+				911284A71705EFA8007352E4 /* burns4.gif */,
+				911284A81705EFA8007352E4 /* burns5.gif */,
+				911284A91705EFA8007352E4 /* burns6.gif */,
+				911284AA1705EFA9007352E4 /* burns7.gif */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +213,14 @@
 				911284701705CCB4007352E4 /* Default@2x.png in Resources */,
 				911284721705CCB4007352E4 /* Default-568h@2x.png in Resources */,
 				911284751705CCB4007352E4 /* MainStoryboard.storyboard in Resources */,
+				911284AB1705EFA9007352E4 /* burns0.gif in Resources */,
+				911284AC1705EFA9007352E4 /* burns1.gif in Resources */,
+				911284AD1705EFA9007352E4 /* burns2.gif in Resources */,
+				911284AE1705EFA9007352E4 /* burns3.gif in Resources */,
+				911284AF1705EFA9007352E4 /* burns4.gif in Resources */,
+				911284B01705EFA9007352E4 /* burns5.gif in Resources */,
+				911284B11705EFA9007352E4 /* burns6.gif in Resources */,
+				911284B21705EFA9007352E4 /* burns7.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
