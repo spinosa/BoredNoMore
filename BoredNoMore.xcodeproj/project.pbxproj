@@ -18,6 +18,7 @@
 		911284721705CCB4007352E4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 911284711705CCB4007352E4 /* Default-568h@2x.png */; };
 		911284751705CCB4007352E4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 911284731705CCB4007352E4 /* MainStoryboard.storyboard */; };
 		911284781705CCB4007352E4 /* DSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911284771705CCB4007352E4 /* DSViewController.m */; };
+		911284811705CD24007352E4 /* DSBoredGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 911284801705CD24007352E4 /* DSBoredGestureRecognizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		911284741705CCB4007352E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		911284761705CCB4007352E4 /* DSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSViewController.h; sourceTree = "<group>"; };
 		911284771705CCB4007352E4 /* DSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSViewController.m; sourceTree = "<group>"; };
+		9112847F1705CD24007352E4 /* DSBoredGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSBoredGestureRecognizer.h; sourceTree = "<group>"; };
+		911284801705CD24007352E4 /* DSBoredGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSBoredGestureRecognizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 		911284611705CCB3007352E4 /* BoredNoMore */ = {
 			isa = PBXGroup;
 			children = (
+				9112847E1705CCFD007352E4 /* Gestures */,
 				9112846A1705CCB3007352E4 /* DSAppDelegate.h */,
 				9112846B1705CCB3007352E4 /* DSAppDelegate.m */,
 				911284731705CCB4007352E4 /* MainStoryboard.storyboard */,
@@ -105,6 +109,15 @@
 				911284711705CCB4007352E4 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9112847E1705CCFD007352E4 /* Gestures */ = {
+			isa = PBXGroup;
+			children = (
+				9112847F1705CD24007352E4 /* DSBoredGestureRecognizer.h */,
+				911284801705CD24007352E4 /* DSBoredGestureRecognizer.m */,
+			);
+			name = Gestures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +190,7 @@
 				911284681705CCB3007352E4 /* main.m in Sources */,
 				9112846C1705CCB3007352E4 /* DSAppDelegate.m in Sources */,
 				911284781705CCB4007352E4 /* DSViewController.m in Sources */,
+				911284811705CD24007352E4 /* DSBoredGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

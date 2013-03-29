@@ -7,8 +7,10 @@
 //
 
 #import "DSViewController.h"
+#import "DSBoredGestureRecognizer.h"
 
 @interface DSViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *headLabel;
 
 @end
 
@@ -17,13 +19,41 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // TAP
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                 action:@selector(tapRecognized)];
+    tapGesture.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:tapGesture];
+    
+    // IMPATIENT
+    DSBoredGestureRecognizer *impatientGesture = [[DSBoredGestureRecognizer alloc] initWithTarget:self
+                                                                                           action:@selector(impatientRecognized)];
+    impatientGesture.numberOfSequencesRequired = 3;
+    impatientGesture.graceBetweenSequences = 0.5;
+    [self.view addGestureRecognizer:impatientGesture];
+    
+    // BORED
+    DSBoredGestureRecognizer *boredGesture = [[DSBoredGestureRecognizer alloc] initWithTarget:self
+                                                                                       action:@selector(boredRecognized)];
+    boredGesture.numberOfSequencesRequired = 1;
+    [boredGesture requireGestureRecognizerToFail:impatientGesture];
+    [self.view addGestureRecognizer:boredGesture];
 }
 
-- (void)didReceiveMemoryWarning
+-(void) boredRecognized
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.headLabel.text = @"You seem bored...";
+}
+
+-(void) impatientRecognized
+{
+    self.headLabel.text = @"Ok... relax... INTERNET, GO!";
+}
+
+-(void) tapRecognized
+{
+    self.headLabel.text = @"do something";
 }
 
 @end
