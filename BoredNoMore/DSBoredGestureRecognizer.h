@@ -18,6 +18,13 @@
 // Amount of time that may pass between valid sequences.  Default: 1.25 seconds
 @property (nonatomic) NSTimeInterval graceBetweenSequences;
 
+typedef NS_OPTIONS(NSUInteger, DSBoredGestureRecognizerDirection) {
+    DSBoredGestureRecognizerDirectionRight = 1 << 0,
+    DSBoredGestureRecognizerDirectionLeft  = 1 << 1
+};
+
+@property (readonly) DSBoredGestureRecognizerDirection direction;
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;

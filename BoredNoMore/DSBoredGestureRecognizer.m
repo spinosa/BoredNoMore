@@ -16,6 +16,8 @@
 //  Accessiblity is important.  If your users have more or fewer fingers, adjust the minimum number of fingers
 //  required in the waterfall with -[DSBoredGestureRecognizer setNumberOfTouchesRequired:(NSUInteger)];
 //
+//  PS You should attach this gesture to a full window root view.  Want to know why?  Read the code and comments.
+//
 //  Created by Daniel Spinosa on 3/28/13.
 //  Copyright (c) 2013 Daniel Spinosa. All rights reserved.
 //
@@ -55,7 +57,11 @@
         return;
     }
     
-    [self.touchPath addObject:[NSValue valueWithCGPoint:[[touches anyObject] locationInView:nil]]];
+    // locationInView:nil returns location relative to UIWindow's coordinate system
+    // this is nice and useful if you care about absolute movement of fingers, but
+    // NB: That coordinate system is always in standard portrait mode!
+    // Just make sure to attach this gesture to a full screen root view
+    [self.touchPath addObject:[NSValue valueWithCGPoint:[[touches anyObject] locationInView:self.view]]];
     [self.nextSequenceBeginGraceTimer invalidate];
     self.nextSequenceBeginGraceTimer = nil;
     
@@ -143,6 +149,7 @@ CGFloat angleBetweenPoints(CGPoint first, CGPoint second) {
 // returns x and y in set [-1,1] to indicate absolute direction relative to screen coordinate system
 // ie. Returning {-1,1} means moving left (negative X) and down (positive Y)
 CGPoint directionBetweenPoints(CGPoint start, CGPoint end) {
+    DLog(@"determining direction for %@ -> %@", NSStringFromCGPoint(start), NSStringFromCGPoint(end));
     return CGPointMake(MIN(1, MAX(-1, end.x-start.x)), MIN(1, MAX(-1, end.y-start.y)));
 }
 
@@ -177,10 +184,12 @@ CGPoint directionBetweenPoints(CGPoint start, CGPoint end) {
                 }
                 
                 //cancel if both X and Y change direction
-                DLog(@"Cur Direction %@, last direction %@", NSStringFromCGPoint(curDirection), NSStringFromCGPoint(lastDirection));
+                DLog(@"(%d) - Cur Direction %@, last direction %@", self.numberOfSequencesRequired, NSStringFromCGPoint(curDirection), NSStringFromCGPoint(lastDirection));
                 if(curDirection.x != lastDirection.x && curDirection.y != lastDirection.y){
                     DLog(@"KILL B/C DIRECTION");
                     return NO;
+                } else {
+                    _direction = (lastDirection.x > 0 ? DSBoredGestureRecognizerDirectionRight : DSBoredGestureRecognizerDirectionLeft);
                 }
             }
             lastAngle = curAngle;
